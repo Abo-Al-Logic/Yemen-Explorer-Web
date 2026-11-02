@@ -1,0 +1,1134 @@
+/* =========================================
+   YEMEN EXPLORER - CULTURE PAGE
+   ========================================= */
+
+
+/* =========================================
+   GENERAL
+   ========================================= */
+
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f8f5ef;
+      color: #29231e;
+      direction: rtl;
+      line-height: 1.8;
+  }
+  
+  img {
+      width: 88%;
+      display: block;
+  }
+  
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
+  
+  section {
+      padding: 90px 8%;
+  }
+  
+  
+  /* =========================================
+     SECTION TITLES
+     ========================================= */
+  
+  .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+  }
+  
+  .section-title span {
+      display: block;
+      color: #a85b32;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      direction: ltr;
+  }
+  
+  .section-title h2 {
+      font-size: 42px;
+      margin: 5px 0;
+      color: #2e241d;
+  }
+  
+  .section-title p {
+      color: #806f60;
+      font-size: 17px;
+  }
+  
+  .section-title.light h2,
+  .section-title.light p {
+      color: white;
+  }
+  
+  .section-title.light span {
+      color: #e4b56a;
+  }
+  
+  
+  /* =========================================
+     HEADER
+     ========================================= */
+  
+  .culture-header {
+      min-height: 100vh;
+  
+      background:
+          linear-gradient(
+              135deg,
+              #30231c,
+              #4b3023 50%,
+              #231a15
+          );
+  
+      color: white;
+  }
+  
+  
+  /* =========================================
+     NAVBAR
+     ========================================= */
+  
+  .navbar {
+      width: 100%;
+      min-height: 80px;
+  
+      padding: 20px 8%;
+  
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .logo {
+      display: flex;
+      flex-direction: column;
+  
+      line-height: 1;
+      direction: ltr;
+  }
+  
+  .logo span {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 4px;
+  }
+  
+  .logo small {
+      font-size: 10px;
+      letter-spacing: 5px;
+  
+      color: #e4b56a;
+  
+      margin-top: 5px;
+  }
+  
+  .nav-links {
+      list-style: none;
+  
+      display: flex;
+      gap: 28px;
+  }
+  
+  .nav-links a {
+      color: #eee;
+      font-size: 14px;
+  
+      transition: 0.3s;
+  }
+  
+  .nav-links a:hover {
+      color: #e4b56a;
+  }
+  
+  
+  /* =========================================
+     HERO
+     ========================================= */
+  
+  .hero {
+      min-height: calc(100vh - 80px);
+  
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+  
+      gap: 60px;
+  
+      padding: 70px 8%;
+  }
+  
+  .hero-content {
+      max-width: 600px;
+  }
+  
+  .hero-small {
+      color: #e4b56a;
+  
+      font-size: 14px;
+      letter-spacing: 5px;
+  
+      direction: ltr;
+  
+      margin-bottom: 15px;
+  }
+  
+  .hero h1 {
+      font-size: clamp(60px, 8vw, 105px);
+      line-height: 0.95;
+  
+      margin-bottom: 30px;
+  }
+  
+  .hero h1 span {
+      color: #e4b56a;
+  }
+  
+  .hero-content > p:not(.hero-small) {
+      color: #d9d0c8;
+  
+      font-size: 18px;
+  
+      max-width: 500px;
+  
+      margin-bottom: 35px;
+  }
+  
+  .hero-button {
+      display: inline-block;
+  
+      background: #e4b56a;
+      color: #30231c;
+  
+      padding: 13px 32px;
+  
+      border-radius: 3px;
+  
+      font-weight: bold;
+  
+      transition: 0.3s;
+  }
+  
+  .hero-button:hover {
+      background: white;
+      transform: translateY(-3px);
+  }
+  
+  .hero-image {
+      height: 700px;
+  
+      position: relative;
+  }
+  
+  .hero-image::before {
+      content: "";
+  
+      position: absolute;
+  
+      width: 90%;
+      height: 100%;
+  
+      border: 0px solid #e4b56a;
+  
+      right: -5px;
+      top: -1px;
+  }
+  
+  .hero-image img {
+      height: 100%;
+  
+      object-fit: cover;
+  
+      position: relative;
+      z-index: 2;
+  
+      filter: saturate(0.8);
+  }
+  
+  
+  /* =========================================
+     ABOUT
+     ========================================= */
+  
+  .about-section {
+      background: #f8f5ef;
+  }
+  
+  .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+  
+      gap: 70px;
+  }
+  
+  .about-image {
+      height: 500px;
+  
+      overflow: hidden;
+  }
+  
+  .about-image img {
+      height: 100%;
+  
+      object-fit: cover;
+  
+      transition: 0.6s;
+  }
+  
+  .about-image:hover img {
+      transform: scale(1.05);
+  }
+  
+  .about-text h3 {
+      font-size: 32px;
+  
+      margin-bottom: 20px;
+  
+      color: #3b2a20;
+  }
+  
+  .about-text p {
+      color: #6e6259;
+  
+      margin-bottom: 18px;
+  }
+  
+  .culture-stats {
+      display: flex;
+      gap: 40px;
+  
+      margin-top: 30px;
+      padding-top: 25px;
+  
+      border-top: 1px solid #ddd2c6;
+  }
+  
+  .stat {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .stat strong {
+      color: #a85b32;
+      font-size: 23px;
+  }
+  
+  .stat span {
+      color: #806f60;
+      font-size: 13px;
+  }
+  
+  
+  /* =========================================
+     HERITAGE
+     ========================================= */
+  
+  .heritage-section {
+      background: #35261e;
+      color: white;
+  }
+  
+  .civilizations {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  
+      gap: 25px;
+  }
+  
+  .civilization-card {
+      padding: 35px;
+  
+      border: 1px solid rgba(255, 255, 255, 0.16);
+  
+      background: rgba(255, 255, 255, 0.04);
+  
+      transition: 0.3s;
+  }
+  
+  .civilization-card:hover {
+      transform: translateY(-8px);
+  
+      background: rgba(255, 255, 255, 0.08);
+  
+      border-color: #e4b56a;
+  }
+  
+  .card-number {
+      color: #e4b56a;
+  
+      font-size: 14px;
+  
+      direction: ltr;
+  
+      margin-bottom: 30px;
+  }
+  
+  .civilization-card h3 {
+      font-size: 27px;
+  
+      margin-bottom: 15px;
+  }
+  
+  .civilization-card p {
+      color: #d4c8bd;
+  
+      font-size: 15px;
+  
+      margin-bottom: 20px;
+  }
+  
+  .civilization-card a {
+      color: #e4b56a;
+  }
+  
+  
+  /* =========================================
+     ARCHITECTURE
+     ========================================= */
+  
+  .architecture-section {
+      background: #eee7dc;
+  }
+  
+  .architecture-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+  
+      gap: 70px;
+  }
+  
+  .architecture-text h3 {
+      font-size: 35px;
+  
+      color: #3b2a20;
+  
+      margin-bottom: 20px;
+  }
+  
+  .architecture-text p {
+      color: #6e6259;
+  
+      margin-bottom: 18px;
+  }
+  
+  .architecture-image {
+      height: 700px;
+  
+      position: relative;
+  
+      overflow: hidden;
+  }
+  
+  .architecture-image img {
+      height: 100%;
+  
+      object-fit: cover;
+  }
+  
+  .image-caption {
+      position: absolute;
+  
+      bottom: 0;
+      right: 0;
+      left: 0;
+  
+      padding: 80px 25px 25px;
+  
+      color: white;
+  
+      background:
+          linear-gradient(
+              transparent,
+              rgba(0, 0, 0, 0.85)
+          );
+  }
+  
+  .image-caption strong {
+      display: block;
+  
+      font-size: 25px;
+  }
+  
+  .image-caption span {
+      font-size: 13px;
+  
+      color: #ddd;
+  }
+  
+  .architecture-features {
+      display: flex;
+  
+      gap: 25px;
+  
+      margin-top: 30px;
+  }
+  
+  .architecture-features div {
+      background: #f8f5ef;
+  
+      padding: 15px;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      min-width: 110px;
+  
+      text-align: center;
+  }
+  
+  .architecture-features span {
+      font-size: 25px;
+  }
+  
+  .architecture-features strong {
+      font-size: 12px;
+  }
+  
+  
+  /* =========================================
+     LANGUAGES
+     ========================================= */
+  
+  .languages-section {
+      background: #f8f5ef;
+  }
+  
+  .language-grid {
+      display: grid;
+  
+      grid-template-columns: repeat(4, 1fr);
+  
+      gap: 20px;
+  }
+  
+  .language-card {
+      background: white;
+  
+      padding: 35px 25px;
+  
+      text-align: center;
+  
+      border-bottom: 4px solid #a85b32;
+  
+      box-shadow: 0 10px 30px rgba(65, 45, 30, 0.06);
+  
+      transition: 0.3s;
+  }
+  
+  .language-card:hover {
+      transform: translateY(-7px);
+  }
+  
+  .language-icon {
+      width: 65px;
+      height: 65px;
+  
+      margin: 0 auto 20px;
+  
+      border-radius: 50%;
+  
+      background: #f0e4d4;
+      color: #a85b32;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      font-size: 25px;
+      font-weight: bold;
+  }
+  
+  .language-card h3 {
+      margin-bottom: 12px;
+  
+      font-size: 21px;
+  }
+  
+  .language-card p {
+      color: #776b61;
+  
+      font-size: 14px;
+  }
+  
+  
+  /* =========================================
+     CRAFTS
+     ========================================= */
+  
+  .crafts-section {
+      background: #35261e;
+  }
+  
+  .crafts-grid {
+      display: grid;
+  
+      grid-template-columns: repeat(3, 1fr);
+  
+      gap: 25px;
+  }
+  
+  .craft-card {
+      background: white;
+  
+      overflow: hidden;
+  }
+  
+  .craft-card img {
+      height: 300px;
+  
+      object-fit: cover;
+  
+      transition: 0.5s;
+  }
+  
+  .craft-card:hover img {
+      transform: scale(1.06);
+  }
+  
+  .craft-info {
+      padding: 25px;
+  }
+  
+  .craft-info h3 {
+      color: #30231c;
+  
+      font-size: 23px;
+  
+      margin-bottom: 8px;
+  }
+  
+  .craft-info p {
+      color: #776b61;
+  
+      font-size: 14px;
+  }
+  
+  
+  /* =========================================
+     CLOTHES
+     ========================================= */
+  
+  .clothes-section {
+      display: grid;
+  
+      grid-template-columns: 1fr 1fr;
+  
+      padding: 0;
+  
+      background: #e8ddce;
+  }
+  
+  .clothes-image {
+      height: 1100px;
+  }
+  
+  .clothes-image img {
+      height: 100%;
+  
+      object-fit: cover;
+  }
+  
+  .clothes-text {
+      padding: 90px 10%;
+  
+      display: flex;
+      justify-content: center;
+  
+      flex-direction: column;
+  }
+  
+  .small-title {
+      color: #a85b32;
+  
+      font-size: 13px;
+      font-weight: bold;
+  
+      letter-spacing: 2px;
+  }
+  
+  .clothes-text h2 {
+      font-size: 55px;
+  
+      margin: 5px 0 15px;
+  }
+  
+  .clothes-text > p {
+      color: #6e6259;
+  
+      margin-bottom: 30px;
+  }
+  
+  .clothing-list > div {
+      display: flex;
+  
+      gap: 20px;
+  
+      padding: 18px 0;
+  
+      border-top: 1px solid #cfc0af;
+  }
+  
+  .clothing-list > div > span {
+      color: #a85b32;
+  
+      font-size: 14px;
+  }
+  
+  .clothing-list strong {
+      display: block;
+  
+      color: #3b2a20;
+  }
+  
+  
+  /* =========================================
+     FOOD
+     ========================================= */
+  
+  .food-section {
+      background: #f8f5ef;
+  }
+  
+  .food-grid {
+      display: grid;
+  
+      grid-template-columns: repeat(4, 1fr);
+  
+      gap: 20px;
+  }
+  
+  .food-card {
+      background: white;
+  
+      padding: 35px 20px;
+  
+      text-align: center;
+  
+      border: 1px solid #e7ddd1;
+  
+      transition: 0.3s;
+  }
+  
+  .food-card:hover {
+      transform: translateY(-7px);
+  
+      border-color: #a85b32;
+  }
+  
+  .food-icon {
+      font-size: 50px;
+  
+      margin-bottom: 15px;
+  }
+  
+  .food-card h3 {
+      font-size: 22px;
+  
+      margin-bottom: 10px;
+  }
+  
+  .food-card p {
+      color: #776b61;
+  
+      font-size: 14px;
+  }
+  
+  
+  /* =========================================
+     ARTS
+     ========================================= */
+  
+  .arts-section {
+      background: #35261e;
+  }
+  
+  .arts-content {
+      display: grid;
+  
+      grid-template-columns: repeat(3, 1fr);
+  
+      gap: 25px;
+  }
+  
+  .art-box {
+      padding: 35px;
+  
+      border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .art-number {
+      color: #e4b56a;
+  
+      font-size: 14px;
+  
+      margin-bottom: 30px;
+  }
+  
+  .art-box h3 {
+      color: white;
+  
+      font-size: 25px;
+  
+      margin-bottom: 15px;
+  }
+  
+  .art-box p {
+      color: #d0c5bb;
+  
+      font-size: 15px;
+  }
+  
+  
+  /* =========================================
+     CUSTOMS
+     ========================================= */
+  
+  .customs-section {
+      background: #eee7dc;
+  }
+  
+  .customs-wrapper {
+      max-width: 900px;
+  
+      margin: auto;
+  }
+  
+  .custom-item {
+      display: grid;
+  
+      grid-template-columns: 70px 1fr;
+  
+      gap: 25px;
+  
+      padding: 25px 0;
+  
+      border-bottom: 1px solid #d2c5b5;
+  }
+  
+  .custom-item > span {
+      width: 55px;
+      height: 55px;
+  
+      border: 1px solid #a85b32;
+  
+      color: #a85b32;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .custom-item h3 {
+      font-size: 22px;
+  
+      margin-bottom: 5px;
+  }
+  
+  .custom-item p {
+      color: #776b61;
+  }
+  
+  
+  /* =========================================
+     QUOTE
+     ========================================= */
+  
+  .culture-quote {
+      min-height: 450px;
+  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      text-align: center;
+  
+      background:
+          linear-gradient(
+              rgba(45, 31, 23, 0.88),
+              rgba(45, 31, 23, 0.88)
+          ),
+          url("https://upload.wikimedia.org/wikipedia/commons/9/9e/Sana.jpg")
+          center / cover fixed;
+  
+      color: white;
+  }
+  
+  .quote-content {
+      max-width: 850px;
+  }
+  
+  .quote-mark {
+      color: #e4b56a;
+  
+      font-family: Georgia, serif;
+  
+      font-size: 90px;
+  
+      line-height: 0.5;
+  }
+  
+  .quote-content h2 {
+      font-size: 42px;
+  
+      line-height: 1.5;
+  
+      margin: 25px 0;
+  }
+  
+  .quote-content p {
+      color: #d5cbc1;
+  }
+  
+  
+  /* =========================================
+     FOOTER
+     ========================================= */
+  
+  .culture-footer {
+      background: #211813;
+  
+      color: white;
+  
+      text-align: center;
+  
+      padding: 55px 8% 25px;
+  }
+  
+  .footer-logo {
+      display: flex;
+  
+      flex-direction: column;
+  
+      align-items: center;
+  
+      direction: ltr;
+  }
+  
+  .footer-logo span {
+      font-size: 27px;
+  
+      font-weight: bold;
+  
+      letter-spacing: 5px;
+  }
+  
+  .footer-logo small {
+      color: #e4b56a;
+  
+      letter-spacing: 5px;
+  }
+  
+  .culture-footer > p {
+      color: #aaa099;
+  
+      margin: 15px 0 20px;
+  }
+  
+  .footer-links {
+      display: flex;
+  
+      justify-content: center;
+  
+      gap: 25px;
+  
+      margin-bottom: 35px;
+  }
+  
+  .footer-links a {
+      color: #ccc;
+  
+      font-size: 13px;
+  }
+  
+  .footer-links a:hover {
+      color: #e4b56a;
+  }
+  
+  .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+  
+      padding-top: 20px;
+  
+      color: #777;
+  
+      font-size: 12px;
+  
+      direction: ltr;
+  }
+  
+  
+  /* =========================================
+     RESPONSIVE - TABLET
+     ========================================= */
+  
+  @media (max-width: 1000px) {
+  
+      .navbar {
+          flex-direction: column;
+          gap: 20px;
+      }
+  
+      .nav-links {
+          flex-wrap: wrap;
+  
+          justify-content: center;
+  
+          gap: 15px;
+      }
+  
+      .hero {
+          grid-template-columns: 1fr;
+  
+          text-align: center;
+      }
+  
+      .hero-content {
+          margin: auto;
+      }
+  
+      .hero-content > p:not(.hero-small) {
+          margin-left: auto;
+          margin-right: auto;
+      }
+  
+      .hero-image {
+          height: 450px;
+      }
+  
+      .about-content,
+      .architecture-content {
+          grid-template-columns: 1fr;
+      }
+  
+      .civilizations,
+      .crafts-grid,
+      .arts-content {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  
+      .language-grid,
+      .food-grid {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  
+      .clothes-section {
+          grid-template-columns: 1fr;
+      }
+  
+      .clothes-image {
+          height: 500px;
+      }
+  
+      .gallery {
+          grid-template-columns: repeat(2, 1fr);
+      }
+  }
+  
+  
+  /* =========================================
+     RESPONSIVE - MOBILE
+     ========================================= */
+  
+  @media (max-width: 600px) {
+  
+      section {
+          padding: 65px 5%;
+      }
+  
+      .nav-links {
+          gap: 10px;
+      }
+  
+      .nav-links a {
+          font-size: 11px;
+      }
+  
+      .hero {
+          padding: 60px 5%;
+      }
+  
+      .hero h1 {
+          font-size: 60px;
+      }
+  
+      .hero-image {
+          height: 350px;
+      }
+  
+      .section-title h2 {
+          font-size: 31px;
+      }
+  
+      .about-image {
+          height: 350px;
+      }
+  
+      .culture-stats {
+          gap: 20px;
+      }
+  
+      .civilizations,
+      .crafts-grid,
+      .arts-content,
+      .language-grid,
+      .food-grid {
+          grid-template-columns: 1fr;
+      }
+  
+      .architecture-image {
+          height: 400px;
+      }
+  
+      .architecture-features {
+          flex-wrap: wrap;
+      }
+  
+      .clothes-image {
+          height: 400px;
+      }
+  
+      .clothes-text {
+          padding: 60px 8%;
+      }
+  
+      .clothes-text h2 {
+          font-size: 42px;
+      }
+  
+      .gallery {
+          grid-template-columns: 1fr;
+  
+          grid-auto-rows: 260px;
+      }
+  
+      .gallery-item.large {
+          grid-column: span 1;
+          grid-row: span 1;
+      }
+  
+      .quote-content h2 {
+          font-size: 29px;
+      }
+  
+      .footer-links {
+          flex-wrap: wrap;
+      }
+  }

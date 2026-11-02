@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مستكشف اليمن — دليل تفاعلي لمدن ووجهات اليمن.">
+    <title>المدن اليمنية | مستكشف اليمن</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/cities.css">
+</head>
+<body>
+<header class="site-header">
+    <a class="logo" href="../index.html">🇾🇪 <span>مستكشف اليمن</span></a>
+    <nav aria-label="التنقل الرئيسي">
+        <a href="../index.html">الرئيسية</a>
+        <a class="active" href="cities.html">المدن</a>
+        <a href="landmarks.html">المعالم</a>
+        <a href="nature.html">الطبيعة</a>
+        <a href="culture.html">الثقافة</a>
+    </nav>
+</header>
+
+<main>
+    
+
+<section class="explorer-section"> <
+    <div class="tools">
+        <div class="search-box"> 
+            <span>⌕</span>
+            <input id="citySearch" type="search" autocomplete="off" placeholder="ابحث عن صنعاء، الحديدة، المخا، حضرموت، سقطرى...">
+            <button id="clearSearch" aria-label="مسح البحث">×</button> 
+        </div>
+        <div class="filters">
+            <button class="filter active" data-filter="all">الكل</button>
+            <button class="filter" data-filter="historic">تاريخية</button>
+            <button class="filter" data-filter="green">خضراء</button>
+            <button class="filter" data-filter="coastal">ساحلية</button>
+            <button class="filter" data-filter="mountain">جبلية</button>
+            <button class="filter" data-filter="favorites">المفضلة <span id="favCount">0</span></button>
+        </div>
+    </div>
+
+    <div class="control-row">
+        <div class="result-line"><span id="resultCount">14 وجهة</span><span>اكتشفها بطريقتك</span></div>
+        <div class="sort-box">
+            <label for="citySort">ترتيب:</label>
+            <select id="citySort"><option value="default">الترتيب الأصلي</option><option value="az">الاسم أ–ي</option><option value="za">الاسم ي–أ</option></select>
+        </div>
+    </div>
+
+    <div class="city-grid" id="cityGrid">
+                <article class="city-card featured" data-city="صنعاء" data-en="SANAA" data-tags="historic"> <!--حاويه رىيسيه  تستخدم لتمثيل كارت مستقل  صنعاء هنا لخاصيه البحث مربوك في جافا-->
+                    <div class="card-image">
+                        <img src="../images/senaa1.jpeg" alt="صنعاء" loading="lazy"><!--الصوره ةتنسيقاتها loading  لتحسين سرعه الموقع المربع-->
+                        <div class="image-shade"></div>
+                        <span class="badge">تاريخية</span>
+                        <button class="favorite" type="button" aria-label="إضافة صنعاء للمفضلة" aria-pressed="false">♡</button><!--طبقه تضليل شفافه لجعل النصوص  والايقونات عامه واضافه للمفضله-->
+                        <span class="number">01</span>
+                    </div>
+                    <div class="card-body"><!--قايمه للعرض توضيح تحت الصوره-->
+                        <span class="city-en">SANAA</span>
+                        <h3>صنعاء</h3>
+                        <p>مدينة التاريخ والأصالة، بعمارتها اليمنية العريقة وأسواقها وأزقتها القديمة.</p>
+                        <div class="mini-tags"><span>🏛️ عمارة</span><span>📜 تاريخ</span></div>
+                        <a href="#sanaa" class="discover-btn">اكتشف صنعاء <b>←</b></a><!--رابط داخلي للنقل الي مكان صنعاء-->
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="إب" data-en="IBB" data-tags="green mountain">
+                    <div class="card-image">
+                        <img src="../images/ab1.jpeg" alt="إب" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">خضراء</span>
+                        <button class="favorite" type="button" aria-label="إضافة إب للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">02</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">IBB</span>
+                        <h3>إب</h3>
+                        <p>مدينة خضراء بين المدرجات الزراعية والجبال والضباب، وتتميز بطبيعة متنوعة.</p>
+                        <div class="mini-tags"><span>🌿 طبيعة</span><span>⛰️ جبال</span></div>
+                        <a href="#ibb" class="discover-btn">اكتشف إب <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="عدن" data-en="ADEN" data-tags="coastal">
+                    <div class="card-image">
+                        <img src="../images/aden1.jpeg" alt="عدن" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">ساحلية</span>
+                        <button class="favorite" type="button" aria-label="إضافة عدن للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">03</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">ADEN</span>
+                        <h3>عدن</h3>
+                        <p>مدينة ساحلية تجمع البحر والجبال والمعالم التاريخية والتنوع الحضري.</p>
+                        <div class="mini-tags"><span>🌊 بحر</span><span>🏔️ جبال</span></div>
+                        <a href="#aden" class="discover-btn">اكتشف عدن <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="تعز" data-en="TAIZ" data-tags="mountain historic">
+                    <div class="card-image">
+                        <img src="../images/tez1.jpeg" alt="تعز" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">جبلية</span>
+                        <button class="favorite" type="button" aria-label="إضافة تعز للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">04</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">TAIZ</span>
+                        <h3>تعز</h3>
+                        <p>مدينة جبلية عريقة، تجمع التاريخ والثقافة والإطلالات الطبيعية.</p>
+                        <div class="mini-tags"><span>⛰️ جبال</span><span>🎭 ثقافة</span></div>
+                        <a href="#taiz" class="discover-btn">اكتشف تعز <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="الحديدة" data-en="HODEIDAH" data-tags="coastal">
+                    <div class="card-image">
+                        <img src="../images/alh1.jpeg" alt="الحديدة" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">ساحلية</span>
+                        <button class="favorite" type="button" aria-label="إضافة الحديدة للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">05</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">HODEIDAH</span>
+                        <h3>الحديدة</h3>
+                        <p>مدينة ساحلية على البحر الأحمر، معروفة بطابعها البحري وأسواقها وحياتها الساحلية.</p>
+                        <div class="mini-tags"><span>🌊 البحر الأحمر</span><span>🐟 ساحل</span></div>
+                        <a href="#hodeidah" class="discover-btn">اكتشف الحديدة <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="المخا" data-en="MOKHA" data-tags="coastal historic">
+                    <div class="card-image">
+                        <img src="../images/ma1.jpeg" alt="المخا" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">ساحلية</span>
+                        <button class="favorite" type="button" aria-label="إضافة المخا للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">06</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">MOKHA</span>
+                        <h3>المخا</h3>
+                        <p>مدينة ساحلية تاريخية ارتبط اسمها منذ قرون بتجارة البن والموانئ.</p>
+                        <div class="mini-tags"><span>☕ البن</span><span>⚓ ميناء</span></div>
+                        <a href="#mokha" class="discover-btn">اكتشف المخا <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="حضرموت" data-en="HADRAMOUT" data-tags="historic coastal mountain">
+                    <div class="card-image">
+                        <img src="../images/ha1.jpeg" alt="حضرموت" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">تراثية</span>
+                        <button class="favorite" type="button" aria-label="إضافة حضرموت للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">07</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">HADRAMOUT</span>
+                        <h3>حضرموت</h3>
+                        <p>حضرموت، موطن مدن تاريخية وعمارة طينية مميزة، تمتد بين الوادي والساحل والصحراء.</p>
+                        <div class="mini-tags"><span>🏘️ عمارة</span><span>🏜️ وادي وصحراء</span></div>
+                        <a href="#hadramout" class="discover-btn">اكتشف حضرموت <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="جزيرة سقطرى" data-en="SOCOTRA" data-tags="coastal green">
+                    <div class="card-image">
+                        <img src="../images/sk1.jpeg" alt="جزيرة سقطرى" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">جزيرة</span>
+                        <button class="favorite" type="button" aria-label="إضافة جزيرة سقطرى للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">08</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">SOCOTRA</span>
+                        <h3>جزيرة سقطرى</h3>
+                        <p>أرخبيل يمني ذو طبيعة فريدة وتنوع نباتي وحيوي لافت.</p>
+                        <div class="mini-tags"><span>🏝️ جزيرة</span><span>🌿 تنوع حيوي</span></div>
+                        <a href="#socotra" class="discover-btn">اكتشف جزيرة سقطرى <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="مأرب" data-en="MARIB" data-tags="historic">
+                    <div class="card-image">
+                        <img src="../images/mar1.jpeg" alt="مأرب" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">تاريخية</span>
+                        <button class="favorite" type="button" aria-label="إضافة مأرب للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">09</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">MARIB</span>
+                        <h3>مأرب</h3>
+                        <p>مدينة ذات حضور بارز في تاريخ اليمن القديم وترتبط بإرث سبأ وآثارها.</p>
+                        <div class="mini-tags"><span>🏺 سبأ</span><span>📜 تاريخ</span></div>
+                        <a href="#marib" class="discover-btn">اكتشف مأرب <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="ذمار" data-en="DHAMAR" data-tags="mountain historic">
+                    <div class="card-image">
+                        <img src="../images/the1.jpeg" alt="ذمار" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">جبلية</span>
+                        <button class="favorite" type="button" aria-label="إضافة ذمار للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">10</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">DHAMAR</span>
+                        <h3>ذمار</h3>
+                        <p>مدينة مرتفعة في وسط اليمن، تتميز بطبيعتها الجبلية وإرثها الثقافي.</p>
+                        <div class="mini-tags"><span>⛰️ مرتفعات</span><span>🏺 تراث</span></div>
+                        <a href="#dhamar" class="discover-btn">اكتشف ذمار <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="صعدة" data-en="SAADA" data-tags="historic mountain">
+                    <div class="card-image">
+                        <img src="../images/sa2.jpeg" alt="صعدة" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">تاريخية</span>
+                        <button class="favorite" type="button" aria-label="إضافة صعدة للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">11</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">SAADA</span>
+                        <h3>صعدة</h3>
+                        <p>مدينة شمالية ذات تاريخ طويل وعمارة تقليدية وهوية محلية مميزة.</p>
+                        <div class="mini-tags"><span>📜 تاريخ</span><span>🏘️ عمارة</span></div>
+                        <a href="#saada" class="discover-btn">اكتشف صعدة <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="حجة" data-en="HAJJAH" data-tags="mountain green">
+                    <div class="card-image">
+                        <img src="../images/hag1.jpeg" alt="حجة" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">جبلية</span>
+                        <button class="favorite" type="button" aria-label="إضافة حجة للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">12</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">HAJJAH</span>
+                        <h3>حجة</h3>
+                        <p>منطقة جبلية ذات تضاريس متنوعة ومدرجات زراعية ومشاهد طبيعية واسعة.</p>
+                        <div class="mini-tags"><span>⛰️ جبال</span><span>🌿 مدرجات</span></div>
+                        <a href="#hajjah" class="discover-btn">اكتشف حجة <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="زبيد" data-en="ZABID" data-tags="historic">
+                    <div class="card-image">
+                        <img src="../images/za1.jpeg" alt="زبيد" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">تاريخية</span>
+                        <button class="favorite" type="button" aria-label="إضافة زبيد للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">13</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">ZABID</span>
+                        <h3>زبيد</h3>
+                        <p>مدينة تاريخية عريقة ارتبطت بالعلم والعمارة والأسواق في تهامة.</p>
+                        <div class="mini-tags"><span>📜 تاريخ</span><span>📚 علم</span></div>
+                        <a href="#zabid" class="discover-btn">اكتشف زبيد <b>←</b></a>
+                    </div>
+                </article>
+
+                <article class="city-card " data-city="شبام حضرموت" data-en="SHIBAM" data-tags="historic mountain">
+                    <div class="card-image">
+                        <img src="../images/sh1.jpeg" alt="شبام حضرموت" loading="lazy">
+                        <div class="image-shade"></div>
+                        <span class="badge">تراثية</span>
+                        <button class="favorite" type="button" aria-label="إضافة شبام حضرموت للمفضلة" aria-pressed="false">♡</button>
+                        <span class="number">14</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="city-en">SHIBAM</span>
+                        <h3>شبام حضرموت</h3>
+                        <p>مدينة حضرمية شهيرة بعمارتها الطينية الشاهقة وتخطيطها الحضري المميز.</p>
+                        <div class="mini-tags"><span>🏙️ عمارة طينية</span><span>📜 تراث</span></div>
+                        <a href="#shibam" class="discover-btn">اكتشف شبام حضرموت <b>←</b></a>
+                    </div>
+                </article>
+    </div>
+    <div id="emptyState" class="empty-state" hidden>
+        <div>⌕</div><h3>لم نجد وجهة بهذا الاسم</h3><p>جرّب اسمًا آخر أو اضغط «الكل» لإظهار جميع المدن.</p>
+        <button id="resetSearch" class="reset-btn">إظهار الجميع</button>
+    </div>
+</section>
+
+<div class="city-details">
+        <section class="city-detail" id="sanaa">
+            <div class="detail-top">
+                <span class="detail-number">01 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">SANAA • تاريخية</span>
+                    <h2>صنعاء</h2>
+                    <h3>مدينة التاريخ والأصالة</h3>
+                    <p>مدينة التاريخ والأصالة، بعمارتها اليمنية العريقة وأسواقها وأزقتها القديمة.</p>
+                    <div class="info-pills"><span>🏛️ عمارة</span><span>📜 تاريخ</span><span>🛍️ أسواق</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/senaa2.jpeg" alt="صنعاء" loading="lazy">
+                    <img src="../images/senaa3.jpg" alt="صنعاء" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="ibb">
+            <div class="detail-top">
+                <span class="detail-number">02 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">IBB • خضراء</span>
+                    <h2>إب</h2>
+                    <h3>مدينة خضراء بين المدرجات الزراعية والجبال والضباب</h3>
+                    <p>مدينة خضراء بين المدرجات الزراعية والجبال والضباب، وتتميز بطبيعة متنوعة.</p>
+                    <div class="info-pills"><span>🌿 طبيعة</span><span>⛰️ جبال</span><span>🌧️ ضباب</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/ab2.jpg" alt="إب" loading="lazy">
+                    <img src="../images/ab3.jpeg" alt="إب" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="aden">
+            <div class="detail-top">
+                <span class="detail-number">03 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">ADEN • ساحلية</span>
+                    <h2>عدن</h2>
+                    <h3>مدينة ساحلية تجمع البحر والجبال والمعالم التاريخية والتنوع الحضري.</h3>
+                    <p>مدينة ساحلية تجمع البحر والجبال والمعالم التاريخية والتنوع الحضري.</p>
+                    <div class="info-pills"><span>🌊 بحر</span><span>🏔️ جبال</span><span>🏛️ معالم</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/aden2.jpeg" alt="عدن" loading="lazy">
+                    <img src="../images/aden3.jpg" alt="عدن" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="taiz">
+            <div class="detail-top">
+                <span class="detail-number">04 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">TAIZ • جبلية</span>
+                    <h2>تعز</h2>
+                    <h3>مدينة جبلية عريقة</h3>
+                    <p>مدينة جبلية عريقة، تجمع التاريخ والثقافة والإطلالات الطبيعية.</p>
+                    <div class="info-pills"><span>⛰️ جبال</span><span>🎭 ثقافة</span><span>📍 إطلالات</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/tez2.jpeg" alt="تعز" loading="lazy">
+                    <img src="../images/tez3.jpeg" alt="تعز" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="hodeidah">
+            <div class="detail-top">
+                <span class="detail-number">05 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">HODEIDAH • ساحلية</span>
+                    <h2>الحديدة</h2>
+                    <h3>مدينة ساحلية على البحر الأحمر</h3>
+                    <p>مدينة ساحلية على البحر الأحمر، معروفة بطابعها البحري وأسواقها وحياتها الساحلية.</p>
+                    <div class="info-pills"><span>🌊 البحر الأحمر</span><span>🐟 ساحل</span><span>☀️ أجواء بحرية</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/alh2.jpg" alt="الحديدة" loading="lazy">
+                    <img src="../images/alh3.jpeg" alt="الحديدة" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="mokha">
+            <div class="detail-top">
+                <span class="detail-number">06 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">MOKHA • ساحلية</span>
+                    <h2>المخا</h2>
+                    <h3>مدينة ساحلية تاريخية ارتبط اسمها منذ قرون بتجارة البن والموانئ.</h3>
+                    <p>مدينة ساحلية تاريخية ارتبط اسمها منذ قرون بتجارة البن والموانئ.</p>
+                    <div class="info-pills"><span>☕ البن</span><span>⚓ ميناء</span><span>📜 تاريخ</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/ma2.jpeg" alt="المخا" loading="lazy">
+                    <img src="../images/ma1.jpeg" alt="المخا" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="hadramout">
+            <div class="detail-top">
+                <span class="detail-number">07 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">HADRAMOUT • تراثية</span>
+                    <h2>حضرموت</h2>
+                    <h3>حضرموت</h3>
+                    <p>حضرموت، موطن مدن تاريخية وعمارة طينية مميزة، تمتد بين الوادي والساحل والصحراء.</p>
+                    <div class="info-pills"><span>🏘️ عمارة</span><span>🏜️ وادي وصحراء</span><span>🌊 ساحل</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/ha2.jpeg" alt="حضرموت" loading="lazy">
+                    <img src="../images/ha3.jpeg" alt="حضرموت" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="socotra">
+            <div class="detail-top">
+                <span class="detail-number">08 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">SOCOTRA • جزيرة</span>
+                    <h2>جزيرة سقطرى</h2>
+                    <h3>أرخبيل يمني ذو طبيعة فريدة وتنوع نباتي وحيوي لافت.</h3>
+                    <p>أرخبيل يمني ذو طبيعة فريدة وتنوع نباتي وحيوي لافت.</p>
+                    <div class="info-pills"><span>🏝️ جزيرة</span><span>🌿 تنوع حيوي</span><span>🌳 طبيعة</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/sk2.jpeg" alt="جزيرة سقطرى" loading="lazy">
+                    <img src="../images/sk3.jpeg" alt="جزيرة سقطرى" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="marib">
+            <div class="detail-top">
+                <span class="detail-number">09 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">MARIB • تاريخية</span>
+                    <h2>مأرب</h2>
+                    <h3>مدينة ذات حضور بارز في تاريخ اليمن القديم وترتبط بإرث سبأ وآثارها.</h3>
+                    <p>مدينة ذات حضور بارز في تاريخ اليمن القديم وترتبط بإرث سبأ وآثارها.</p>
+                    <div class="info-pills"><span>🏺 سبأ</span><span>📜 تاريخ</span><span>🏛️ آثار</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/mar1.jpeg" alt="مأرب" loading="lazy">
+                    <img src="../images/sh1.jpeg" alt="مأرب" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="dhamar">
+            <div class="detail-top">
+                <span class="detail-number">10 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">DHAMAR • جبلية</span>
+                    <h2>ذمار</h2>
+                    <h3>مدينة مرتفعة في وسط اليمن</h3>
+                    <p>مدينة مرتفعة في وسط اليمن، تتميز بطبيعتها الجبلية وإرثها الثقافي.</p>
+                    <div class="info-pills"><span>⛰️ مرتفعات</span><span>🏺 تراث</span><span>🌿 طبيعة</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/the1.jpeg" alt="ذمار" loading="lazy">
+                    <img src="../images/ha1.jpeg" alt="ذمار" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="saada">
+            <div class="detail-top">
+                <span class="detail-number">11 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">SAADA • تاريخية</span>
+                    <h2>صعدة</h2>
+                    <h3>مدينة شمالية ذات تاريخ طويل وعمارة تقليدية وهوية محلية مميزة.</h3>
+                    <p>مدينة شمالية ذات تاريخ طويل وعمارة تقليدية وهوية محلية مميزة.</p>
+                    <div class="info-pills"><span>📜 تاريخ</span><span>🏘️ عمارة</span><span>⛰️ جبال</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/sa3.jpeg" alt="صعدة" loading="lazy">
+                    <img src="../images/sa2.jpeg" alt="صعدة" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="hajjah">
+            <div class="detail-top">
+                <span class="detail-number">12 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">HAJJAH • جبلية</span>
+                    <h2>حجة</h2>
+                    <h3>منطقة جبلية ذات تضاريس متنوعة ومدرجات زراعية ومشاهد طبيعية واسعة.</h3>
+                    <p>منطقة جبلية ذات تضاريس متنوعة ومدرجات زراعية ومشاهد طبيعية واسعة.</p>
+                    <div class="info-pills"><span>⛰️ جبال</span><span>🌿 مدرجات</span><span>☁️ مناخ جبلي</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/hag2.jpeg" alt="حجة" loading="lazy">
+                    <img src="../images/hag3.jpeg" alt="حجة" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="zabid">
+            <div class="detail-top">
+                <span class="detail-number">13 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">ZABID • تاريخية</span>
+                    <h2>زبيد</h2>
+                    <h3>مدينة تاريخية عريقة ارتبطت بالعلم والعمارة والأسواق في تهامة.</h3>
+                    <p>مدينة تاريخية عريقة ارتبطت بالعلم والعمارة والأسواق في تهامة.</p>
+                    <div class="info-pills"><span>📜 تاريخ</span><span>📚 علم</span><span>🏛️ عمارة</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/za2.jpeg" alt="زبيد" loading="lazy">
+                    <img src="../images/za3.jpeg" alt="زبيد" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section class="city-detail" id="shibam">
+            <div class="detail-top">
+                <span class="detail-number">14 / CITY PROFILE</span>
+                <a href="#cityGrid">↑ العودة للمدن</a>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-copy">
+                    <span class="detail-kicker">SHIBAM • تراثية</span>
+                    <h2>شبام حضرموت</h2>
+                    <h3>مدينة حضرمية شهيرة بعمارتها الطينية الشاهقة وتخطيطها الحضري المميز.</h3>
+                    <p>مدينة حضرمية شهيرة بعمارتها الطينية الشاهقة وتخطيطها الحضري المميز.</p>
+                    <div class="info-pills"><span>🏙️ عمارة طينية</span><span>📜 تراث</span><span>🏜️ حضرموت</span></div>
+                </div>
+                <div class="detail-gallery">
+                    <img class="big-shot" src="../images/sh1.jpeg" alt="شبام حضرموت" loading="lazy">
+                    <img src="../images/sh1.jpeg" alt="شبام حضرموت" loading="lazy">
+                </div>
+            </div>
+        </section></div>
+
+<section class="closing">
+    <span>✦</span><h2>كل مدينة... حكاية يمنية</h2><p>استكشف المدن الآن، واترك أقسام المعالم والطبيعة والثقافة للمحتوى القادم.</p>
+</section>
+</main>
+
+<footer><p>© 2026 مستكشف اليمن — Yemen Explorer</p></footer>
+<script src="../js/cities.js"></script>
+</body>
+</html>
